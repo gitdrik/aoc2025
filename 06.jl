@@ -3,8 +3,8 @@ open("06.txt") do f
     rows, cols = size(H)
 
     p1 = 0
-    ops = strip.(split(join(H[:,cols])))
-    ns = [parse.(Int, strip.(split(join(H[:,i])))) for i ∈ 1:cols-1]
+    ops = split(join(H[:,cols]))
+    ns = [parse.(Int, split(join(H[:,i]))) for i ∈ 1:cols-1]
     for i ∈ eachindex(ops)
         if ops[i]=="*"
             p1 += prod(ns[j][i] for j ∈ 1:cols-1)
@@ -17,7 +17,7 @@ open("06.txt") do f
     p2 = 0
     ns2::Vector{Int} = []
     for i ∈ rows:-1:1
-        H[i, :]==collect(' '^cols) && continue
+        all(H[i, :].==' ') && continue
         push!(ns2, parse(Int, join(H[i, 1:cols-1])))
         if H[i, cols]=='*'
             p2 += prod(ns2)
