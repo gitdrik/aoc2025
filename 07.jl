@@ -2,7 +2,7 @@ open("07.txt") do f
     M = readlines(f)
     sc = findfirst(==('S'), M[1])
     rows = length(M)
-        
+
     p1 = 0
     MEM::Dict{Tuple{Int,Int},Int} = Dict()
     function timelines(r, c)
