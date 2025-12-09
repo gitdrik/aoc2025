@@ -10,7 +10,7 @@ open("09.txt") do f
     println("Part 1: ", p1)
 
     borders::Array{NTuple{2, UnitRange{Int}}} = []
-    # Make a border outside of the line, which is left* in the example.
+    # Make a border outside of the line, to the left* in the example.
     # A rectangle should not intersects this outside border.
     # Outside corners are ignored, does not matter anyway.
     # This only works if there is at least 1 empty row around the outside.
