@@ -10,7 +10,7 @@ open("12.txt") do f
             # No, will not work.
             nothing
         else
-            println("$i: Undefined, method not implemented.")
+            println("$i: TBD, maybe next year.")
             exit()
         end
     end
